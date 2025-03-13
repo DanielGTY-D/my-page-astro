@@ -1,0 +1,52 @@
+---
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+
+// styles modules
+import styles from "./styles/profile.module.css";
+
+interface DataIndentity {
+	firstName: string;
+	country: string;
+	occupation: string;
+	hobbies: string[];
+}
+
+const identity: DataIndentity = {
+	firstName: "Sarah",
+	country: "Canada",
+	occupation: "Escritor técnico",
+	hobbies: ["fotografia", "observación de aves", "peñarol"],
+};
+
+const skills: string[] = [
+	"HTML",
+	"CSS",
+	"JavaScript",
+	"React",
+	"Astro",
+	"Redacción de documentos",
+];
+---
+
+<Layout>
+	<Welcome />
+
+	<div>
+		<h1>Hi my name is: {identity.firstName}</h1>
+
+		<p>I live in: {identity.country}</p>
+		<p>I`m: {identity.occupation}</p>
+		<ul>
+			{identity.hobbies.map((hobbie) => <li>{hobbie}</li>)}
+		</ul>
+
+		<div>
+			<h2>tecnichal skills what is know:</h2>
+
+			<ul class={styles['skill-list']}>
+				{skills.map((skill) => <li class={styles.skill}><p class={styles['skill-text']}>{skill}</p></li> )}
+			</ul>
+		</div>
+	</div>
+</Layout>
