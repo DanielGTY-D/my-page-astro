@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import styles from "./Header.module.css";
+import logo from "../../img/panda-log.png";
+---
+
+<header class={styles.header}>
+	<div class={styles.header__top}>
+		<Image src={logo} alt="Logo de pagina" height={224} width={224} />
+
+		<h1>Anime World</h1>
+	</div>
+	<nav class={styles.header__navigation}>
+		<ul>
+			<li class={styles["header__navigation-items"]}><a href="#">Inicio</a></li>
+			<li class={styles["header__navigation-items"]}><a href="#">Series</a></li>
+			<li class={styles["header__navigation-items"]}><a href="#">Películas</a></li>
+			<li class={styles["header__navigation-items"]}><a href="#">Comunidad</a></li>
+			<li class={styles["header__navigation-items"]}><a href="#">Perfil</a></li>
+			<li class={styles["header__navigation-items"]}><a href="#">Login</a></li>
+		</ul>
+	</nav>
+	<div class={styles.header__search}>
+		<input type="text" placeholder="Buscar anime, series o peliculas..." />
+	</div>
+</header>

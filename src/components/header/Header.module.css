@@ -1,0 +1,132 @@
+.header {
+	background-color: var(--bg-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5rem 0;
+	position: relative;
+	height: 30.08rem;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		background-image: url("../../img/white-menu.svg");
+		width: 4rem;
+		height: 4rem;
+
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+	}
+}
+
+.header__top {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 85%;
+	margin: 0 auto;
+	padding-bottom: 3rem;
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	img {
+		width: 10rem;
+		height: 10rem;
+	}
+
+	h1 {
+		color: var(--text);
+		background: linear-gradient(90deg, #2196f3, #9c27b0);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-size: 36px;
+		font-weight: bold;
+	}
+}
+
+.header__navigation {
+	display: none;
+
+	@media (min-width: 768px) {
+		display: block;
+
+		ul {
+			display: flex;
+			gap: 1rem;
+		}
+	}
+}
+
+.header__navigation-items {
+	a {
+		color: var(--text);
+		font-size: 2rem;
+		text-transform: uppercase;
+		background: linear-gradient(90deg, #2196f3, #b926d3);
+		background-size: 300% auto;
+		background-clip: text;
+		-webkit-background-clip: text;
+    background-clip: text;
+		-webkit-text-fill-color: transparent;
+		transition: background-position .4s ease-in-out; /* Animamos solo background-position */
+
+		&:hover {
+			background-position: right center; /* Mueve el degradado en hover */
+		}
+
+    &::after {
+      content: "";
+      display: block;
+      border-bottom: 1px solid #b926d3;
+      width: 100%;
+      transform: scale(0);
+      transition: all .4s ease-in-out;
+    }
+
+    &:hover::after {
+      transform: scale(100%);
+    }
+	}
+}
+
+.header__search {
+	width: 26rem;
+
+	input {
+		border: none;
+		border-radius: 1rem;
+		width: 100%;
+		padding: 0.5rem 1rem;
+    outline: none;
+    transition: all .3s ease-in-out;
+
+		&::placeholder {
+			background: linear-gradient(90deg, #2196f3, #9c27b0);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+    &:focus {
+      border-radius: 0;
+      height: 3rem;
+      font-size: 1.5rem;
+    }
+	}
+}

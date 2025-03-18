@@ -1,0 +1,10 @@
+.silide-item {
+  height: 100%;
+  padding-bottom: 2rem;
+
+  img {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+  }
+}
